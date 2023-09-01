@@ -1,0 +1,44 @@
+<div class="gradient-section">
+    {% for block in section.blocks %}
+    <div class="gradient-block"
+        style="background: linear-gradient({{ block.settings.from_color }}, {{ block.settings.to_color }});">
+        {{ block.settings.content }}
+    </div>
+    {% endfor %}
+</div>
+
+{% schema %}
+
+{
+    "name": "Gradient Blocks",
+    "settings": [],
+    "blocks": [
+        {
+            "type": "gradient_block",
+            "name": "Gradient Block",
+            "settings": [
+                {
+                    "type": "color",
+                    "id": "from_color",
+                    "label": "From Color",
+                    "default": "#ffffff"
+                },
+                {
+                    "type": "color",
+                    "id": "to_color",
+                    "label": "To Color",
+                    "default": "#000000"
+                },
+                {
+                    "type": "textarea",
+                    "id": "content",
+                    "label": "Content",
+                    "default": "Your content here"
+                }
+            ],
+            "limit": 5
+        }
+    ]
+}
+{% endschema %}
+
