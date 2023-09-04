@@ -1,50 +1,61 @@
+<style>
+  .gradient-section {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .gradient-block {
+    height: 400px;
+    width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 20px;
+  }
+</style>
+
 <div class="gradient-section">
   {% for block in section.blocks %}
-    <div class="gradient-block" style="background: linear-gradient({{ block.settings.from_color }}, {{ block.settings.to_color }});">
+    <div
+      class="gradient-block"
+      style="background: linear-gradient({{ block.settings.from_color }}, {{ block.settings.to_color }});"
+    >
       {{ block.settings.content }}
     </div>
   {% endfor %}
 </div>
 
 {% schema %}
-  {
-    "name": "t:sections.gradient",
-    "tag": "section",
-    "class": "section",
-    "settings": [
-      {
-        "type": "text",
-        "id": "section_label",
-        "label": "Section Label",
-        "default": "Gradient Blocks"
-      }
-    ],
+{
+    "name": "Gradient Blocks",
+
     "blocks": [
-      {
-        "type": "gradient_block",
-        "name": "Gradient Block",
-        "settings": [
-          {
-            "type": "color",
-            "id": "from_color",
-            "label": "From Color",
-            "default": "#ffffff"
-          },
-          {
-            "type": "color",
-            "id": "to_color",
-            "label": "To Color",
-            "default": "#000000"
-          },
-          {
-            "type": "textarea",
-            "id": "content",
-            "label": "Content",
-            "default": "Your content here"
-          }
-        ],
-        "limit": 5
-      }
+        {
+            "type": "gradient_block",
+            "name": "Gradient Block",
+
+            "settings": [
+                {
+                    "type": "color",
+                    "id": "from_color",
+                    "label": "From Color",
+                    "default": "#ffffff"
+                },
+                {
+                    "type": "color",
+                    "id": "to_color",
+                    "label": "To Color",
+                    "default": "#000000"
+                },
+                {
+                    "type": "textarea",
+                    "id": "content",
+                    "label": "Content",
+                    "default": "Your content here"
+                }
+            ],
+            "limit": 5
+        }
     ]
-  }
+}
 {% endschema %}
