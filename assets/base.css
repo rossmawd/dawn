@@ -2400,9 +2400,8 @@ product-info .loading-overlay:not(.hidden) ~ *,
 
   .header--middle-left {
     grid-template-areas: 'heading navigation icons';
-    grid-template-columns: initial;
+    grid-template-columns: auto auto 1fr;
     column-gap: 2rem;
-    justify-items: center;  /* center items horizontally within their grid areas */
 }
 
   .header--middle-center:not(.drawer-menu) {
