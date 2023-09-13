@@ -1,0 +1,19 @@
+{
+  "parent": "index.json",
+  "context": {
+    "market": "mexico"
+  },
+  "sections": {
+    "image_banner": {
+      "settings": {
+      },
+      "blocks": {
+        "heading": {
+          "settings": {
+            "heading": "This should be in Spanish"
+          }
+        }
+      }
+    }
+  }
+}

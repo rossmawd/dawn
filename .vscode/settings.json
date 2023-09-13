@@ -6,7 +6,5 @@
   "[css]": {
     "editor.formatOnSave": true
   },
-  "[liquid]": {
-    "editor.formatOnSave": true
-  }
+  "liquid.format.enable": true
 }
